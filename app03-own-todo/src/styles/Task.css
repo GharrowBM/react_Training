@@ -1,0 +1,41 @@
+.todo-task {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+.todo-task button[class^="btn-task-"] {
+    height: 100%;
+    appearance: none;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.task-name {
+    white-space: nowrap;
+    height: 100%;
+    background-color: white;
+    padding: 0 3%
+}
+
+.btn-task-edit {
+    background-color: rgb(25,120,220);
+}
+
+.btn-task-delete {
+    border-radius: 0 25px 25px 0;
+    background-color: rgb(225,20,20);
+}
+
+.btn-task-checked {
+    border-radius: 50% 0 0 50%;
+    background-color: rgb(25,220,120);
+}
+
+.btn-task-unchecked {
+    border-radius: 50% 0 0 50%;
+    background-color: rgb(25,20,20);
+}

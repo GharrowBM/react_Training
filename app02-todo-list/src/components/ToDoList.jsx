@@ -10,6 +10,13 @@ export default function ToDoList() {
 
   const [inputValue, setInputValue] = useState('')
 
+  function deleteTask(id) {   
+    let tmpArray = [...todos]
+    tmpArray.splice(id, 1)
+    setTodos(tmpArray)
+    console.log(todos)
+  }
+
   return (
     <>
       <div className="container">
@@ -26,6 +33,9 @@ export default function ToDoList() {
           />
           <button className="col btn btn-primary" onClick={() => setTodos([...todos, {name: inputValue, isDone: false}])}>Ajouter</button>
         </div>
+        <div className="row">
+          {todos.length}  Task(s)
+        </div>
         <table className="table text-center">
           <thead>
             <tr>
@@ -36,7 +46,7 @@ export default function ToDoList() {
             </tr>
           </thead>
           <tbody>
-              {todos.map((todo, index) => <ToDo key={index} id={index} {...todo} todos={todos} setTodos={setTodos}/>)}
+              {todos.map((todo, index) => <ToDo key={index} id={index} {...todo} todos={todos} deleteTask={deleteTask} setTodos={setTodos}/>)}
           </tbody>
         </table>
       </div>
