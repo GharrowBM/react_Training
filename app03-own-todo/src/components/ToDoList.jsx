@@ -23,7 +23,7 @@ export default function ToDoList() {
                 <button onClick={() => {if (!(tasks.some(task => task.name === newTaskName))) addTask(newTaskName)}}>+</button>
             </div>
             <div className="todo-body">
-                {tasks.map((task, index) => <Task key={index} id={index} {...task} tasks={tasks} setTasks={setTasks}/>
+                {tasks.map((task, index) => <Task key={index} id={index} tasks={tasks} setTasks={setTasks}/>
                 )}
             </div>
         </div>
