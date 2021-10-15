@@ -1,16 +1,20 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import PageBody from '../components/PageBody'
-import PageTitle from '../components/PageTitle'
+import Body from '../components/Body'
 
 class CV extends React.PureComponent {
+
+    componentDidMount() {
+        document.title = "Mon CV"
+    }
+
+
     render() {
         return(
             <>
                 <Header />
-                <PageTitle>Mon CV</PageTitle>
-                <PageBody>
+                <Body title="Mon CV">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet fuga cupiditate ratione beatae sequi. Voluptatibus praesentium quaerat dicta tempore. Ipsum dolores libero laboriosam non impedit delectus vitae corrupti ipsam labore?
                     Reiciendis veritatis suscipit culpa aut voluptates repellendus eligendi atque provident perferendis magni. Explicabo dolores sed esse numquam. Hic velit minus a excepturi saepe similique quidem, accusantium corporis fugiat recusandae inventore?
                     Animi ipsum harum possimus nisi aspernatur libero, quod molestias veniam id sequi deleniti labore dignissimos aliquam exercitationem reprehenderit! Neque praesentium facilis optio perferendis iste facere esse reiciendis ab quia hic!
@@ -26,7 +30,7 @@ class CV extends React.PureComponent {
                     Repellat numquam praesentium commodi distinctio nulla cumque vero, odio aspernatur dicta, unde nam magni fuga consectetur quasi consequuntur nemo autem et fugiat exercitationem. Omnis debitis eaque maxime labore voluptatibus quia.
                     Dolorem, aliquam nesciunt perferendis eum debitis ipsum enim esse, quos magni dolore quasi est. Ab accusantium architecto facilis amet! Magni iste in officiis ad aspernatur, asperiores consectetur est sequi corrupti.
                     Nemo sunt sequi at perspiciatis voluptatem repudiandae porro deserunt nihil, placeat vitae aperiam, pariatur tenetur necessitatibus consequatur corrupti eveniet quidem repellendus dicta odio, dignissimos blanditiis? Non doloremque amet quia quo?
-                </PageBody>
+                </Body>
                 <Footer />
             </>
         )

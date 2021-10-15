@@ -1,16 +1,19 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
+import Body from '../components/Body'
 
 class Home extends React.PureComponent {
+
+    componentDidMount() {
+        document.title = "Accueil"
+    }
+
     render() {
         return(
             <>
                 <Header />
-                <PageTitle>Home</PageTitle>
-                <PageBody>
+                <Body title="Accueil">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit quod provident consectetur inventore. Vero temporibus ratione dolorum delectus id aspernatur molestiae provident, optio sunt, voluptatem eius atque dolorem dolore. Incidunt.
                     Doloremque, reprehenderit minus, dicta hic eum blanditiis soluta, minima amet aperiam vero consequatur incidunt cum. Velit fuga ratione, impedit aperiam debitis ad dolorem labore id asperiores libero quidem quae officia!
                     Eaque deleniti quo sit, quae architecto ad quis delectus ut veniam laborum molestiae soluta, voluptatibus, repellat possimus et perspiciatis. Mollitia vel dignissimos hic tempora dolorem corrupti debitis laboriosam amet veniam.
@@ -31,7 +34,7 @@ class Home extends React.PureComponent {
                     Illo libero eos laborum magnam eaque fugit provident ullam sit dolore labore quam dolorem, repudiandae deserunt cum dicta error impedit nisi alias? Eligendi unde doloremque repudiandae, dicta vero quaerat neque.
                     Earum ex deserunt unde est. Maxime, voluptatem, animi aspernatur dolor quasi porro illo culpa sint molestiae saepe voluptatibus natus eius perferendis accusantium cum sequi consectetur provident corrupti alias voluptates ducimus.
                     Maiores id inventore fugit excepturi illo vitae assumenda, distinctio repellendus voluptatem, voluptate et, non ex harum. Aliquam harum iusto odio. Possimus assumenda doloremque, quas praesentium non provident quaerat consequuntur dolor?
-                </PageBody>
+                </Body>
                 <Footer />
             </>
         )

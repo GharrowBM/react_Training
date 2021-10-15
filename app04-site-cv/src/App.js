@@ -13,7 +13,7 @@ import Agenda from './views/Agenda'
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <Switch>
         <Route path="/agenda">
             <Agenda />

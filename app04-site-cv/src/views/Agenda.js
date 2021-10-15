@@ -1,16 +1,19 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import PageBody from '../components/PageBody'
-import PageTitle from '../components/PageTitle'
+import Body from '../components/Body'
 
 class Agenda extends React.PureComponent {
+
+    componentDidMount() {
+        document.title = "Agenda"
+    }
+
     render() {
         return(
             <>
                 <Header />
-                <PageTitle>Agenda</PageTitle>
-                <PageBody>
+                <Body title="Agenda">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur corrupti doloremque similique ad molestias iusto quibusdam tempore fuga laborum commodi. Maiores expedita illum tenetur repudiandae quod quae, quam molestiae cumque.
                     Aliquam quae quos hic tenetur veniam odit voluptatibus quaerat vero ipsa. Error quidem, incidunt sint quia alias, pariatur, quo praesentium minus libero consequuntur ipsa cupiditate in hic numquam neque placeat?
                     Amet a ad mollitia quas quo facere pariatur voluptas? Labore error quo doloremque inventore soluta omnis repellat asperiores nisi. Est autem ullam officia magni! Ea id ut delectus quis ratione!
@@ -26,7 +29,7 @@ class Agenda extends React.PureComponent {
                     Deleniti, a quasi, eligendi culpa corporis repellendus possimus qui, deserunt ut cumque incidunt. Suscipit, corporis enim incidunt ab labore, sunt culpa consequuntur natus similique fugit minima dolores hic fugiat voluptates?
                     Consequatur, placeat ipsa iusto quisquam, voluptatum rem doloremque sequi ad natus aliquid repudiandae officia laboriosam modi qui alias quaerat optio quod facere? Odio veniam fugit quisquam ipsum ratione non excepturi!
                     Non repellendus, in commodi reprehenderit, est libero nihil eum voluptate maiores blanditiis architecto ratione doloribus. Adipisci neque magnam facere voluptas, recusandae accusamus beatae dolores, blanditiis, vitae molestias cum officia dolorem.
-                </PageBody>
+                </Body>
                 <Footer />
             </>
         )
