@@ -1,0 +1,28 @@
+header {
+    height: 150px;
+    background: rgb(33,0,36);
+    background: linear-gradient(180deg, rgba(33,0,36,1) 0%, rgba(63,2,91,1) 100%);
+}
+
+.site-header {
+    padding: 25px 0 0 25px;
+    display: flex;
+    align-items: center;   
+}
+
+.site-logo {
+    filter: invert(97%) sepia(4%) saturate(895%) hue-rotate(156deg) brightness(103%) contrast(91%);
+    height: 150px;
+}
+
+.site-name {
+    padding-left: 10px;
+    color: #e7f4f4;
+}
+
+.site-navbar {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

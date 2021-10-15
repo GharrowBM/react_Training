@@ -3,37 +3,62 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    padding: 2%;
+    width: 80%;
+    margin: 5px auto;
+    border-radius: 10px;
 }
 
-.todo-task button[class^="btn-task-"] {
-    height: 100%;
+.task-actions {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-actions button {
+    margin: 5% auto;
+    height: 30%;
+    width: 80%;
     appearance: none;
     border: none;
+    padding: 2px;
+    opacity: 0.6;
+    border-radius: 5px;
     color: white;
-    font-weight: bolder;
 }
 
-.task-name {
-    height: 100%;
-    background-color: white;
-    padding: 0 3%
+.task-actions button:hover {
+    opacity: 1;
+    font-weight: bold;
 }
 
 .btn-task-edit {
-    background-color: rgb(25,120,220);
+    background-color: rgb(10,10,200);
+    color: white;
 }
 
 .btn-task-delete {
-    border-radius: 0 25px 25px 0;
-    background-color: rgb(225,20,20);
-}
-
-.btn-task-checked {
-    border-radius: 50% 0 0 50%;
-    background-color: rgb(25,220,120);
+    background-color: rgb(200,10,10);
+    color: white;
 }
 
 .btn-task-unchecked {
-    border-radius: 50% 0 0 50%;
-    background-color: rgb(25,20,20);
+    background-color: rgb(200,200,10);
+}
+
+.btn-task-checked {
+    background-color: rgb(10,200,10);
+}
+
+.task-content {
+    height: 100%;
+    background-color: white;
+    flex-basis: 80%;
+    padding-left: 5%;
+}
+
+.task-content textarea {
+    height: 100%;
+    width: 100%;
 }

@@ -12,6 +12,14 @@ background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, F
     border-radius: 25px;
 }
 
+.todo-list h1 {
+    text-align: center;
+    color: rgb(10,10,10);
+    font-weight: bolder;
+    margin: auto;
+    padding: 5px 0;
+}
+
 .todo-head {
     display: flex;
     align-items: center;
@@ -31,17 +39,30 @@ background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, F
 .todo-head input {
     width: 80%;
     border: none;
-    height: 25px;
-    border-radius: 10px 0 0 10px;
+    height: 30px;
     padding-left: 10px;
 }
 
 .todo-head button {
     appearance: none;
     border: none;
+    height: 30px;
     background-color: purple;
     font-size: 20px;
     font-weight: bolder;
     color: white;
     border-radius: 0 10px 10px 0;
+    opacity: 0.6;
+}
+
+.todo-head button:hover {
+    opacity: 1;
+}
+
+#task-number {
+    height: 20px;
+    border-radius: 10px 0 0 10px;
+    background-color: rgb(130, 50, 10);
+    color: white;
+    padding: 5px;
 }

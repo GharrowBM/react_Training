@@ -27,18 +27,21 @@ export default function Task({id, tasks, setTasks}) {
 
     return(
         <div className="todo-task">
-                       <button className={tasks[id].isDone ? "btn-task-checked" : "btn-task-unchecked"} onClick={() => switchCompletion(id)}>
-                {tasks[id].isDone? "☒" : "☐"}
-            </button>
-            <div className="task-name">
-                {tasks[id].isEdited? <input type="text" value={tasks[id].name} onChange={(e) => changeTaskName(id, e.currentTarget.value)}/> : tasks[id].name}
-            </div>
+            <div className="task-actions">
+            <button className={tasks[id].isDone ? "btn-task-checked" : "btn-task-unchecked"} onClick={() => switchCompletion(id)}>
+                {tasks[id].isDone? "Done" : "To Do"}
+            </button>            
             <button className="btn-task-edit" onClick={() => switchEdition(id)}>
                 {tasks[id].isEdited? "Confirm" : "Edit"}
             </button>
             <button className="btn-task-delete" onClick={() => deleteTask(id)}>
                 Delete
             </button>
+            </div>
+            <div className="task-content">
+                {tasks[id].isEdited? <textarea rows="3" value={tasks[id].name} onChange={(e) => changeTaskName(id, e.currentTarget.value)}/> : tasks[id].name}
+            </div>
+                     
         </div>
     )
 }

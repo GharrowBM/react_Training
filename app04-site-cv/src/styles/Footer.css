@@ -1,0 +1,26 @@
+footer {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 10px;
+    height: 150px;
+    background: rgb(33,0,36);
+    background: linear-gradient(0deg, rgba(33,0,36,1) 0%, rgba(63,2,91,1) 100%);
+}
+
+.footer-text {
+    text-align: right;
+    line-height: 1.2;
+    padding: 5px;
+    color: #e7f4f4;
+}
+
+.social-medias {
+    filter: invert(97%) sepia(4%) saturate(895%) hue-rotate(156deg) brightness(103%) contrast(91%);
+}
+
+.social-medias img {
+    margin: 0 5px;
+    height: 25px;
+}
