@@ -1,51 +1,30 @@
-import { createStore } from "redux";
+import {connect} from 'react-redux'
+import { UPDATE_TODO_ACTION } from '../store/todoReducer'
 
-function TodoList() {
-  let id = 2;
-
-  const initialState = [
-    {
-      id: 1,
-      title: "Enregistrer le tutoriel",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Préparer le tutoriel",
-      completed: true,
-    },
-  ];
-
-  const ADD_TODO_ACTION = "ADD_TODO_ACTION";
-
-  function TodoReducer(state = initialState, action) {
-    switch (action.type) {
-      case ADD_TODO_ACTION:
-        return [
-          ...state,
-          {
-            id: ++id,
-            ...action.payload,
-            completed: false,
-          },
-        ];
-      default:
-        return state;
-    }
-  }
-
-  const store = createStore(
-    TodoReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
-  store.subscribe(() => console.log(store.getState()));
-
-  store.dispatch({ type: ADD_TODO_ACTION, payload: { title: "Demo" } });
-  store.dispatch({ type: ADD_TODO_ACTION, payload: { title: "Demo" } });
-  store.dispatch({ type: ADD_TODO_ACTION, payload: { title: "Demo" } });
-  store.dispatch({ type: ADD_TODO_ACTION, payload: { title: "Demo" } });
-
-  return <></>;
+function TodoItem ({todo, onToggle}) {
+    return <li>
+      <label>
+        <input type="checkbox" checked={todo.completed} onChange={() => onToggle(todo)}/>
+        {todo.title}
+      </label>
+    </li>
 }
 
-export default TodoList;
+export function TodoList({todos, onToggle}) {
+
+  return <ul>
+    {todos.map(todo => <TodoItem todo={todo} onToggle={onToggle} key={todo.id}/>)}
+  </ul>
+}
+
+export const TodoListStore = connect(
+  (state) => ({
+    todos:state.todos
+  }),
+  (dispatch) => ({
+    onToggle: todo => dispatch({
+      type: UPDATE_TODO_ACTION,
+      payload: {...todo, completed: !todo.completed}
+    })
+  })
+)(TodoList)

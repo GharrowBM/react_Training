@@ -1,17 +1,18 @@
 import React from 'react'
 import './App.css';
-import Counter from './components/Counter';
-import TodoList from './components/TodoList';
+import {Provider} from 'react-redux'
+import {TodoListStore} from './components/TodoList';
+import {CounterStore} from './components/Counter'
+import store from './store/index.js'
 
 function App() {
 
 
   return (
-    <div className="App">
-        <Counter />        
-        {/* <TodoList /> */}
-
-    </div>
+    <Provider store={store}>
+      <TodoListStore />
+      <CounterStore />
+    </Provider>
   );
 }
 

@@ -1,57 +1,38 @@
-import {createStore} from 'redux'
 import {useState} from 'react'
-import {Provider} from 'react-redux'
+import { PLUS_COUNTER_ACTION, MINUS_COUNTER_ACTION } from '../store/counterReducer';
+import {connect} from 'react-redux'
 import '../styles/Counter.css'
 
-function Counter() {
+export function Counter({counter, plusCounter, minusCounter}) {
 
-  const initialState = {
-    value: 0,
-  };
-
-  const PLUS_COUNTER_ACTION = "PLUS_COUNTER_ACTION";
-  const MINUS_COUNTER_ACTION = "MINUS_COUNTER_ACTION";
-
-  function CounterReducer(state = initialState, action) {
-    switch (action.type) {
-      case PLUS_COUNTER_ACTION:
-        return {
-          value: state.value + parseInt(action.modifier),
-        };
-      case MINUS_COUNTER_ACTION:
-        return {
-          value: state.value - parseInt(action.modifier),
-        };
-      default:
-        return state;
-    }
-  }
-
-  const store = createStore(
-      CounterReducer,
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
-    store.subscribe(() => console.log(store.getState()))
-
-    store.dispatch({type: PLUS_COUNTER_ACTION, modifier: 1})
-    store.dispatch({type: MINUS_COUNTER_ACTION, modifier: 1})
-
-    const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
   return (
-      <Provider store={store}>
                 <div className="counter">
-          <div className="counter-input">
-              <input type="text" name="input-value" id="input-value" placeholder="Valeur" value={inputValue} onChange={(e) => setInputValue(e.currentTarget.value)}/>
-              <button onClick={() => store.dispatch({type: PLUS_COUNTER_ACTION, modifier: inputValue})}>+</button>
-              <button onClick={() => store.dispatch({type: MINUS_COUNTER_ACTION, modifier: inputValue})}>-</button>
-          </div>
-          <div className="counter-result">
-              <h2>La valeur du compteur est de XXX</h2>
-          </div>
+            <div className="counter-input">
+                <input type="text" name="input-value" id="input-value" placeholder="Valeur" value={inputValue} onChange={(e) => setInputValue(e.currentTarget.value)}/>
+                <button onClick={() => plusCounter(inputValue)}>+</button>
+                <button onClick={() => minusCounter(inputValue)}>-</button>
+            </div>
+            <div className="counter-result">
+                <h2>La valeur du compteur est de {counter.value}</h2>
+            </div>
       </div>
-      </Provider>
   );
 }
 
-export default Counter;
+export const CounterStore = connect(
+  (state) => ({
+    counter : state.counter
+  }),
+  (dispatch) => ({
+    plusCounter: (modifierValue) => dispatch({
+      type: PLUS_COUNTER_ACTION,
+      modifier: modifierValue
+    }),
+    minusCounter: (modifierValue) => dispatch({
+      type:MINUS_COUNTER_ACTION,
+      modifier: modifierValue
+    })
+  })
+)(Counter)
