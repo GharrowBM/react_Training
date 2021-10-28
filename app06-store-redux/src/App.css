@@ -1,0 +1,12 @@
+.App {
+    margin: auto;
+    text-align: center;
+}
+
+.change-store {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

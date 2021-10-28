@@ -1,0 +1,11 @@
+.counter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-input {
+    margin: 50px auto;
+}
