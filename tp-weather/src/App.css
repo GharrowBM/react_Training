@@ -1,3 +1,30 @@
 .App {
+  background: rgba(0,0,0,0.5);
+  width: 40%;
+  border-radius: 25px;
+  margin: 50px auto;
+  padding: 25px;
   text-align: center;
+  color: white;
+}
+
+.output-area {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.output-area img {
+  height: 100px;
+}
+
+.output-area span {
+  font-size: 20px;
+}
+
+html {
+  min-height: 100vh;
+  background-image: linear-gradient( 0deg,  rgba(118,12,99,1) 11.2%, rgba(71,11,75,1) 98.6% );
 }
