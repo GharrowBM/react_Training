@@ -1,0 +1,11 @@
+.expense-item {
+    @apply w-full bg-gray-600 my-2 rounded-lg shadow-lg flex p-4 text-lg;
+}
+
+.expense-item_description {
+    @apply flex ml-4 w-full  items-center px-2 text-white font-semibold;
+}
+
+.expense-item_price {
+    @apply ml-auto border border-white px-2 py-1 rounded-lg bg-blue-900;
+}

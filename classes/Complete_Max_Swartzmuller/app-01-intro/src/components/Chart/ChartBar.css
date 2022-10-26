@@ -1,0 +1,11 @@
+.chart-bar {
+    @apply flex flex-col space-y-1 items-center;
+}
+
+.chart-bar_inner {
+    @apply w-2 h-40 bg-white rounded-full relative overflow-hidden;
+}
+
+.chart-bar_fill {
+    @apply bg-orange-700 absolute bottom-0 left-0 right-0;
+}
