@@ -1,0 +1,19 @@
+.user-item {
+  @apply w-full bg-blue-900 text-white rounded-lg shadow my-2 p-2 flex font-semibold items-center;
+}
+
+.user-item > div {
+  @apply bg-slate-800 border border-white p-1 px-2 rounded-lg flex flex-col items-center;
+}
+
+.user-item > div > div:first-child {
+  @apply text-3xl;
+}
+
+.user-item > div > div:last-child {
+  @apply text-xs;
+}
+
+.user-item > p {
+  @apply w-full text-center text-2xl ml-2;
+}

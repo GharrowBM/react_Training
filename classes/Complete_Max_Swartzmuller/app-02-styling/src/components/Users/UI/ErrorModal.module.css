@@ -1,0 +1,24 @@
+.modal-bg {
+  @apply absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-[rgba(0,0,0,0.5)];
+}
+
+.modal-fg {
+  @apply w-[60%] bg-white rounded-2xl shadow-lg flex flex-col justify-between overflow-hidden;
+}
+
+.modal-fg > header,
+.modal-fg > footer {
+  @apply bg-gray-700 text-white font-bold text-2xl p-2 flex w-full;
+}
+
+.modal-fg > main {
+  @apply p-4 font-thin text-lg;
+}
+
+.modal-fg > footer {
+  @apply justify-end px-4;
+}
+
+.modal-fg > footer > button {
+  @apply bg-blue-800 p-1 px-2 rounded-xl border border-white;
+}
