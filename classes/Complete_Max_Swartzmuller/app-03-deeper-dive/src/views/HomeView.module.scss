@@ -1,0 +1,19 @@
+.home-view {
+  @apply bg-blue-700 rounded-xl shadow-lg my-2 p-4;
+
+  > p {
+    @apply text-center;
+  }
+
+  > div {
+    @apply flex justify-between w-full;
+
+    > span:first-child {
+      @apply bg-red-700 p-2 text-white rounded-xl shadow-lg;
+    }
+
+    > span:last-child {
+      @apply bg-green-700 p-2 text-white rounded-xl shadow-lg;
+    }
+  }
+}

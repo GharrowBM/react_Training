@@ -1,0 +1,35 @@
+.login-form {
+  @apply shadow-lg p-4 my-4 rounded-xl w-2/3 mx-auto;
+
+  > :last-child {
+    @apply flex justify-end w-full;
+
+    > button {
+      @apply text-white shadow p-1 px-2 rounded-lg ;
+    }
+
+    > button:is([disabled]) {
+      @apply bg-black;
+    }
+
+    > button:not([disabled]) {
+      @apply bg-blue-700 transition-all duration-150;
+    }
+
+    > button:hover:not([disabled]) {
+      @apply -translate-y-0.5 shadow-lg bg-blue-600;
+    }
+  }
+}
+
+.login-form-item {
+  @apply flex w-full mb-2;
+
+  > label {
+    @apply w-[20%];
+  }
+
+  > input {
+    @apply border border-blue-400 w-full rounded-lg;
+  } 
+}

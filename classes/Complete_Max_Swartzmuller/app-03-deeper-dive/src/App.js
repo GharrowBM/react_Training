@@ -1,7 +1,9 @@
+import HomeView from "./views/HomeView";
+
 function App() {
   return (
     <div className="container mx-auto">
-      Hello world!
+      <HomeView />
     </div>
   );
 }
