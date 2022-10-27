@@ -1,19 +1,27 @@
 import styles from "./UsersForm.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function UsersForm({ onAddUser }) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (userName.valid && userName.touched && userAge.valid && userAge.touched) {
+    if (
+      userName.valid &&
+      userName.touched &&
+      userAge.valid &&
+      userAge.touched
+    ) {
       onAddUser({
-        name: userName.value,
-        age: userAge.value
+        name: userNameInputRef.current.value,
+        age: +userAgeInputRef.current.value,
       });
-  
-      setUserName({value: '', touched: false, valid: false})
-      setUserAge({value: 0, touched: false, valid: false})
+
+      setUserName({ value: "", touched: false, valid: false });
+      setUserAge({ value: 0, touched: false, valid: false });
     }
   };
+
+  const userNameInputRef = useRef();
+  const userAgeInputRef = useRef();
 
   const [userName, setUserName] = useState({
     value: "",
@@ -47,6 +55,7 @@ function UsersForm({ onAddUser }) {
       <div className={styles["users-form-item"]}>
         <label htmlFor="userName">Name:</label>
         <input
+          ref={userNameInputRef}
           type="text"
           id="userName"
           name="userName"
@@ -60,12 +69,13 @@ function UsersForm({ onAddUser }) {
       <div className={styles["users-form-item"]}>
         <label htmlFor="userAge">Age:</label>
         <input
+          ref={userAgeInputRef}
           type="number"
           id="userAge"
           name="userAge"
           value={userAge.value}
-          min='0'
-          max='200'
+          min="0"
+          max="200"
           className={`${userAge.touched ? styles["form-input-touched"] : ""} ${
             !userAge.valid ? styles["form-input-invalid"] : ""
           }`}
@@ -79,4 +89,4 @@ function UsersForm({ onAddUser }) {
   );
 }
 
-export default UsersForm
+export default UsersForm;

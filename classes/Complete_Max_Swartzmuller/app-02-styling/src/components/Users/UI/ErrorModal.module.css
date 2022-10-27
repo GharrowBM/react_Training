@@ -6,8 +6,7 @@
   @apply w-[60%] bg-white rounded-2xl shadow-lg flex flex-col justify-between overflow-hidden;
 }
 
-.modal-fg > header,
-.modal-fg > footer {
+.modal-fg > header {
   @apply bg-gray-700 text-white font-bold text-2xl p-2 flex w-full;
 }
 
@@ -16,9 +15,13 @@
 }
 
 .modal-fg > footer {
-  @apply justify-end px-4;
+  @apply justify-end px-4 text-white font-bold p-2 flex w-full;
 }
 
 .modal-fg > footer > button {
-  @apply bg-blue-800 p-1 px-2 rounded-xl border border-white;
+  @apply bg-gray-800 p-1 px-3 rounded-xl text-lg transition-all duration-150;
+}
+
+.modal-fg > footer > button:hover {
+  @apply bg-gray-700 -translate-y-0.5 shadow-lg;
 }
