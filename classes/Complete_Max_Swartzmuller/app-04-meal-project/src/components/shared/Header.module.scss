@@ -1,0 +1,19 @@
+.header {
+  @apply flex items-start justify-between p-4 bg-orange-700 text-white sticky;
+
+  > h1 {
+    @apply text-3xl text-gray-100 transition duration-200;
+  }
+
+  > h1:hover {
+    @apply text-white -translate-y-0.5 cursor-pointer;
+  }
+}
+
+.main-image {
+  @apply absolute -top-[55%] -left-10 w-[105%] -z-10;
+
+  > img {
+    @apply w-full -rotate-[2deg];
+  }
+}
