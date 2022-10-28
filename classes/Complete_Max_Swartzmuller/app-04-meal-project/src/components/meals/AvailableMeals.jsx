@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import Card from '../UI/Card'
 import classes from './AvailableMeals.module.scss'
+import MealItem from './MealItem'
 
 function AvailableMeals (props) {
   const [mealsList, setMealsList] = useState([])
@@ -10,6 +12,7 @@ function AvailableMeals (props) {
       if (mealsList.length === 0) {
         setMealsList([... mealsList, 
           {
+            id: 1,
             title: 'Burrito',
             description: 'Description of Burrito',
             price: 18.99
@@ -26,7 +29,11 @@ function AvailableMeals (props) {
 
   return (
     <section>
-      {mealsList.map((m, i) => <div key={i}>{m.title}</div>)}
+      <Card>
+      <ul>
+      {mealsList.map((m) => <MealItem key={m.id} meal={m} />)}
+        </ul>
+      </Card>
     </section>
 
   )

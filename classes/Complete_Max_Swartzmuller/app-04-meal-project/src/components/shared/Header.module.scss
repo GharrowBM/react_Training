@@ -11,9 +11,11 @@
 }
 
 .main-image {
-  @apply absolute -top-[55%] -left-10 w-[105%] -z-10;
+  > div {
+    @apply bg-black w-full h-full;
+  }
 
   > img {
-    @apply w-full -rotate-[2deg];
+    @apply absolute -top-[250px] w-[105%] -z-10 opacity-60 w-full -rotate-[2deg];
   }
 }

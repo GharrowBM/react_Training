@@ -10,6 +10,7 @@ function Header(props) {
         <HeaderCartButton />
       </header>
       <div className={classes['main-image']}>
+        <div></div>
         <img src={foodBanner} alt="A tons of food" />
       </div>
     </>

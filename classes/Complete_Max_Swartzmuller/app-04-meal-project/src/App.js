@@ -1,13 +1,13 @@
 import Header from "./components/shared/Header";
-import AvailableMeals from "./components/shared/meals/AvailableMeals";
-import MealsSummary from "./components/shared/meals/MealsSummary";
+import Meals from "./components/meals/Meals";
 
 function App() {
   return (
     <div>
       <Header />
-      <MealsSummary />
-      <AvailableMeals />
+      <main className="container mx-auto">
+        <Meals />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.input {
+  @apply space-x-2 flex;
+
+  > label {
+    @apply font-semibold;
+  }
+  
+  > input {
+    @apply border border-orange-700 w-12 px-1;
+  }
+}

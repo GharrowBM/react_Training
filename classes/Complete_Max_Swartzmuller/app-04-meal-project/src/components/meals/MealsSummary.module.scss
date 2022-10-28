@@ -1,0 +1,11 @@
+.summary {
+ @apply mx-auto w-[80%] shadow-lg rounded-lg bg-slate-700 text-white p-4 my-4 flex flex-col items-center; 
+
+ > h2 {
+  @apply text-3xl font-semibold text-orange-500;
+ }
+
+ > p {
+  @apply my-4;
+ }
+}

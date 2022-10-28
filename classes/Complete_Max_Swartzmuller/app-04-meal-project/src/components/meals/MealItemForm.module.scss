@@ -1,0 +1,11 @@
+.form {
+  @apply flex flex-col space-y-2;
+
+  > button {
+    @apply w-[80%] self-end bg-orange-700 text-white p-1 px-3 rounded-full font-semibold;
+  }
+
+  > button:hover {
+    @apply bg-orange-600 -translate-y-0.5 shadow;
+  }
+}

@@ -1,0 +1,19 @@
+.meal-item {
+  @apply flex justify-between items-center px-4;
+
+  > div:first-child {
+    @apply flex flex-col;
+
+    > h3 {
+      @apply font-bold text-xl;
+    }
+
+    > div:nth-child(2) {
+      @apply italic text-sm;
+    }
+
+    > div:last-child {
+      @apply text-orange-600 font-bold font-sans text-lg;
+    }
+  }
+}

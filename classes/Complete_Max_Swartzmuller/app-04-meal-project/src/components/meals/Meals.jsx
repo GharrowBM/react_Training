@@ -1,0 +1,15 @@
+import classes from './Meals.module.scss'
+
+import MealsSummary from './MealsSummary'
+import AvailableMeals from './AvailableMeals'
+
+function Meals () {
+    return (
+        <>
+            <MealsSummary />
+            <AvailableMeals />
+        </>
+    )
+}
+
+export default Meals
