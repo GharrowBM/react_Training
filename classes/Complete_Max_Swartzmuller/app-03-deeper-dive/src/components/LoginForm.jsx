@@ -101,7 +101,7 @@ function LoginForm({ onLogin }) {
         />
       </div>
       <div>
-        <button disabled={!formState.valid}>Login</button>
+        <button disabled={!formState.valid}>Log In</button>
       </div>
     </form>
   );
