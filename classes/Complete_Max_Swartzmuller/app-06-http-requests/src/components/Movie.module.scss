@@ -1,0 +1,15 @@
+.movie {
+  @apply relative bg-blue-900 p-8 rounded-xl w-[80%] flex flex-col items-center gap-4;
+
+  > h2 {
+    @apply text-yellow-500 text-3xl font-bold;
+  }
+
+  > p {
+    @apply text-white text-center;
+  }
+
+  .release-date {
+    @apply absolute top-4 right-4 border border-white rounded-full p-1 px-4 italic text-yellow-500 font-bold;
+  }
+}
