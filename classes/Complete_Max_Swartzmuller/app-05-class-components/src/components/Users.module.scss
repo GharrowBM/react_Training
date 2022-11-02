@@ -1,0 +1,15 @@
+.users {
+  @apply my-10 mx-auto w-[60%] bg-white rounded-lg p-2 px-4 flex flex-col justify-center items-center shadow-lg;
+
+  > button {
+    @apply p-0.5 px-2 bg-pink-800 text-white font-semibold rounded-lg shadow duration-150 transition-all;
+  }
+
+  > button:hover {
+    @apply bg-pink-600;
+  }
+}
+
+.users-ul {
+  @apply flex flex-col items-center;
+}

@@ -1,0 +1,7 @@
+.finder {
+  @apply my-10 mx-auto w-[60%] bg-white rounded-lg p-2 px-4 flex justify-center items-center shadow-lg;
+
+  > input {
+    @apply border border-blue-400 rounded-lg;
+  }
+}
