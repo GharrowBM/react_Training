@@ -1,0 +1,27 @@
+.total {
+  @apply flex justify-between text-2xl font-bold;
+}
+
+.actions {
+  @apply flex justify-end gap-6 py-2;
+
+  > button {
+    @apply rounded-lg py-1 px-4 rounded-full transition-all duration-150;
+  }
+
+  > button:first-child {
+    @apply border border-orange-700;
+  }
+
+  > button:first-child:hover {
+    @apply -translate-y-0.5 bg-orange-600 shadow text-white;
+  }
+
+  > button:last-child {
+    @apply bg-orange-700 text-white;
+  }
+
+  > button:last-child:hover {
+    @apply -translate-y-0.5 bg-orange-600 shadow;
+  }
+}

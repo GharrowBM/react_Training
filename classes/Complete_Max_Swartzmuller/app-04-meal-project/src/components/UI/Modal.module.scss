@@ -1,0 +1,11 @@
+.backdrop {
+  @apply absolute h-screen w-screen bg-[rgba(0,0,0,0.5)];
+}
+
+.modal {
+  @apply absolute h-screen w-screen flex items-start justify-center py-[20%];
+
+  > .content {
+    @apply p-4 bg-white w-[60%] rounded-lg;
+  }
+}

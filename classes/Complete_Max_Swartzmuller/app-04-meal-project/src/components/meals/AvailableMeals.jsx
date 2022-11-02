@@ -28,7 +28,7 @@ function AvailableMeals (props) {
   }, [])
 
   return (
-    <section>
+    <section className='w-[90%] mx-auto'>
       <Card>
       <ul>
       {mealsList.map((m) => <MealItem key={m.id} meal={m} />)}

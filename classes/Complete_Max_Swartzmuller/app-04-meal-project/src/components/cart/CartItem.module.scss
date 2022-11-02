@@ -1,0 +1,34 @@
+.cart-item {
+  @apply p-2 border-b-2 border-orange-700 flex justify-between;
+
+  > div:first-child {
+
+    > h2 {
+      @apply text-2xl font-bold;
+    }
+
+    .summary {
+      @apply flex gap-20 items-center font-bold;
+
+      .price {
+        @apply text-orange-700;
+      }
+
+      .amount {
+        @apply p-0.5 px-2 border border-orange-700 rounded text-red-700;
+      }
+    }
+  }
+
+  .actions {
+    @apply flex items-center;
+    
+    > button {
+      @apply p-0.5 px-4 border border-orange-700 rounded m-5 text-red-700 font-bold transition-all duration-150;
+    }
+
+    > button:hover {
+      @apply bg-orange-700 text-white;
+    }
+  }
+}
