@@ -1,7 +1,34 @@
 .form {
-  @apply w-full p-4 bg-white rounded-xl shadow;
+  @apply w-full max-w-md p-4 bg-white rounded-xl shadow flex flex-col;
 }
 
 .form-item {
-  
+  @apply flex flex-col;
+  > label {
+    @apply text-lg font-semibold;
+  }
+
+  > input, textarea {
+    @apply bg-gray-100 p-1 border-b-4  border-transparent;
+  }
+
+  > input:focus, textarea:focus {
+    @apply border-red-700 outline-none
+  }
+
+  > textarea {
+    resize: none;
+  }
+}
+
+.actions {
+  @apply my-2 flex justify-end;
+
+  > button {
+    @apply border border-red-700 p-1 px-4 rounded-full text-red-700 font-semibold shadow;
+  }
+
+  > button:hover {
+    @apply border-transparent bg-red-700 text-white shadow-lg;
+  }
 }

@@ -1,0 +1,43 @@
+.todo {
+  @apply flex flex-col;
+
+  > div:first-child {
+    @apply flex justify-between font-bold items-center border-b-2 border-red-700 pb-1;
+
+    > h3 {
+      @apply flex-1 text-2xl text-center text-red-700;
+    }
+
+    > span {
+      @apply rounded-full p-1 px-4 bg-green-500 text-white w-12;
+    }
+
+    > span.overdue {
+      @apply bg-red-500;
+    }
+
+    > span.almost {
+      @apply bg-yellow-500;
+    }
+
+    > button {
+      @apply ml-2 border border-red-700 rounded-full p-1 px-4;
+
+      > img {
+        @apply h-5 w-5;
+      }
+    }
+
+    > button:hover {
+      @apply border-transparent bg-red-700;
+
+      > img {
+        @apply invert;
+      }
+    }
+  }
+
+  > p {
+    @apply text-start p-0.5 px-2 text-slate-700;
+  }
+}

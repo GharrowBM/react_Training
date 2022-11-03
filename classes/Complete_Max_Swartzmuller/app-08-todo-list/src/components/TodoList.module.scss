@@ -1,0 +1,8 @@
+.todo-list {
+  @apply w-full p-4 rounded-lg self-start flex flex-col bg-white text-center overflow-y-auto max-h-[600px];
+
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 0;
+}
