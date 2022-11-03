@@ -1,0 +1,7 @@
+.books {
+  @apply mx-auto w-[80%] my-4 p-4 rounded-lg bg-white shadow-lg flex flex-col items-center gap-2;
+
+  > h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+}

@@ -1,0 +1,37 @@
+.book {
+  @apply w-full flex p-2 border border-red-800 rounded-lg;
+
+  > div {
+    @apply flex flex-col;
+  }
+
+  > div:first-child {
+    @apply w-[70%];
+
+    > h2 {
+      @apply self-start text-red-700 text-xl font-bold;
+    }
+
+    > p {
+      @apply text-slate-900 italic;
+    }
+  }
+
+  >div:last-child {
+    @apply w-full items-end px-2 justify-between;
+
+    > span {
+      @apply text-2xl text-red-700 font-semibold mb-2;
+    }
+
+    > button {
+      @apply p-1 px-4 border-2 border-red-700 rounded-full;
+    }
+
+    > button:hover {
+      @apply border-transparent bg-red-700 text-white;
+    }
+  }
+
+
+}

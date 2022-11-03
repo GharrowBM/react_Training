@@ -1,0 +1,26 @@
+.header {
+  @apply p-4 px-8 bg-slate-800 flex justify-between;
+  
+  > h2 {
+    @apply text-gray-200 font-bold text-3xl;
+  }
+  > h2:hover {
+    @apply cursor-pointer text-white;
+  }
+
+  > button {
+    @apply p-2 px-4 border border-white text-white rounded-full flex items-center gap-2;
+
+    > img {
+      @apply invert h-6 w-6
+    }
+
+    > span {
+      @apply w-12 p-0.5 rounded-full bg-orange-600;
+    }
+  }
+
+  > button:hover {
+    @apply bg-gray-700;
+  }
+}
