@@ -1,0 +1,17 @@
+.main {
+
+  > div:first-child {
+    
+    > h1 {
+      @apply text-red-700 text-3xl font-semibold;
+    }
+
+    > a {
+      @apply border border-red-700 absolute right-4 bottom-4 p-1 px-4 rounded-full;
+    }
+
+    > a:hover {
+      @apply bg-red-700 text-white;
+    }
+  }
+}

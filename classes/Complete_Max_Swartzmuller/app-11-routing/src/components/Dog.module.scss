@@ -1,0 +1,49 @@
+.dog-item {
+  @apply my-2 border border-red-700 rounded-lg p-4 flex justify-between items-center;
+
+  .picture {
+    > img {
+      @apply h-40 w-40 object-cover rounded-full;
+    }
+  }
+
+  .details {
+    @apply ml-12 flex-1 flex flex-col;
+
+    > h3 {
+      @apply text-2xl text-red-700 font-semibold italic;
+    }
+  }
+
+  .actions {
+    @apply flex flex-col;
+
+    > a {
+      @apply border p-1 px-4 text-center rounded-full my-0.5;
+    }
+
+    > a:nth-child(1) {
+      @apply border-gray-700;
+    }
+
+    > a:nth-child(1):hover {
+      @apply bg-gray-700 text-white;
+    }
+
+    > a:nth-child(2) {
+      @apply border-yellow-700;
+    }
+
+    > a:nth-child(2):hover {
+      @apply bg-yellow-700 text-white;
+    }
+
+    > a:nth-child(3) {
+      @apply border-red-700;
+    }
+
+    > a:nth-child(3):hover {
+      @apply bg-red-700 text-white;
+    }
+  }
+}

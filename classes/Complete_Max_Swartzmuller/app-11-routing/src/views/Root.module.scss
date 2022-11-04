@@ -1,0 +1,64 @@
+.root {
+  @apply w-screen h-screen bg-gray-100 flex;
+
+  > header {
+    @apply bg-slate-800 w-[15%] p-4;
+
+    > .app-logo {
+      @apply flex flex-col items-center text-3xl font-bold text-gray-200;
+
+      > svg {
+        @apply fill-gray-200 h-20 w-20;
+      }
+    }
+
+    > .app-logo:hover {
+      @apply text-orange-200;
+
+      > svg {
+        @apply fill-orange-200;
+      }
+    }
+
+    > hr {
+      @apply my-4;
+    }
+  }
+}
+
+.navigation {
+  @apply flex flex-col items-center py-2 gap-4;
+
+  > li {
+    @apply text-xl text-gray-200 font-semibold;
+  }
+
+  > li:hover {
+    @apply text-orange-200;
+  }
+
+  > li:has(> a.active) {
+    @apply text-red-700;
+  }
+}
+
+.outlet {
+  @apply overflow-y-auto w-full max-w-[85%] p-4;
+}
+
+.outlet::-webkit-scrollbar {
+  width: 5px;
+}
+
+.outlet::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.outlet::-webkit-scrollbar-thumb {
+  background: rgb(25, 25, 50);
+  border-radius: 9999px;
+}
+
+.outlet::-webkit-scrollbar-thumb:hover {
+  background: rgb(141, 104, 11);
+}
