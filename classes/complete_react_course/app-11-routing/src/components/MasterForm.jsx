@@ -1,5 +1,5 @@
 import classes from './MasterForm.module.scss'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -7,6 +7,8 @@ const BASE_FIREBASE_URL = 'https://fir-react-kennel-redux-default-rtdb.europe-we
 
 function MasterForm (props) {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const mode = searchParams.get('mode') ?? 'add'
 
   const [masterFName, setMasterFName] = useState({value: props.master?.firstname ?? '', isValid: !!props.master, isTouched: !!props.master})
   const [masterLName, setMasterLName] = useState({value: props.master?.lastname ?? '', isValid: !!props.master, isTouched: !!props.master})
@@ -17,7 +19,7 @@ function MasterForm (props) {
   const submitFormHandler = async (e) => {
     e.preventDefault()
     
-    switch (props.mode) {
+    switch (mode) {
       case 'add':
         await axios.post(BASE_FIREBASE_URL + 'masters.json', {firstname: masterFName.value, lastname: masterLName.value, email: masterEmail.value, phone: masterPhone.value})
         break;
@@ -80,8 +82,8 @@ function MasterForm (props) {
     checkFormValidity()
   }, [masterFName, masterLName, masterEmail, masterPhone])
 
-  const isReadOnly = props.mode === 'delete' || props.mode === 'details'
-  const buttonText = props.mode === 'edit' ? 'Edit' : props.mode === 'add' ? 'Add' : props.mode === 'delete' ? 'Delete' : 'Back'
+  const isReadOnly = mode === 'delete' || mode === 'details'
+  const buttonText = mode === 'edit' ? 'Edit' : mode === 'add' ? 'Add' : mode === 'delete' ? 'Delete' : 'Back'
 
   return  <form onSubmit={submitFormHandler} className={classes.form}>
   <h3>{props.formTitle}</h3>

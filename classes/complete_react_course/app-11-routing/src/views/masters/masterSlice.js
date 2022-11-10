@@ -30,7 +30,8 @@ const masterSlice = createSlice({
       return {
         ...state,
         isLoading: false,
-        error: action.payload.message
+        error: action.payload,
+        masters: []
       }
     }
   }
@@ -43,19 +44,23 @@ export const loadMastersData = () => {
     try {
       const response = await axios.get(BASE_FIREBASE_URL + `masters.json`);
 
-      if (response.status === 200 && response.data) {
-        let mastersArray = [];
-
-        for (const key in response.data) {
-          mastersArray.push({ id: key, ...response.data[key] });
+      if (response.status === 200) {
+        if (response.data) {
+          let mastersArray = [];
+  
+          for (const key in response.data) {
+            mastersArray.push({ id: key, ...response.data[key] });
+          }
+  
+          dispatch(masterSlice.actions.loadMastersSuccess(mastersArray));
+        } else {
+          throw new Error('No master in the database...')
         }
-
-        dispatch(masterSlice.actions.loadMastersSuccess(mastersArray));
       } else {
         throw new Error("Something went wrong...");
       }
     } catch (error) {
-      dispatch(masterSlice.actions.loadMastersFailure({...error}));
+      dispatch(masterSlice.actions.loadMastersFailure(error.message));
     }
   }
 }

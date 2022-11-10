@@ -8,7 +8,7 @@ function DogDelete() {
   const dogSelected = dogs.find(d => d.id === dogId)
 
   return <>
-  <DogForm dog={dogSelected} mode='delete' />
+  <DogForm dog={dogSelected}/>
   </>
 }
 

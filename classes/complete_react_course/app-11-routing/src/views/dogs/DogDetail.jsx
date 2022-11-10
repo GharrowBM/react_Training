@@ -8,7 +8,7 @@ function DogDetail () {
   const dogSelected = dogs.find(d => d.id === dogId)
 
   return <>
-  <DogForm dog={dogSelected} mode='details' />
+  <DogForm dog={dogSelected}/>
   </>
 }
 

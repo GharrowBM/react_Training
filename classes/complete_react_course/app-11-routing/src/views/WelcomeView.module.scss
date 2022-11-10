@@ -1,0 +1,9 @@
+.welcome {
+  h1 {
+    @apply my-4 text-3xl font-semibold italic; 
+  }
+
+  section {
+    @apply my-2;
+  }
+}

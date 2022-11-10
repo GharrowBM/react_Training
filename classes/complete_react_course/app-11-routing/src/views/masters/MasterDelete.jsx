@@ -8,7 +8,7 @@ function MasterDelete() {
   const masterSelected = masters.find(m => m.id === masterId)
 
   return <>
-  <MasterForm master={masterSelected} mode='delete' />
+  <MasterForm master={masterSelected}/>
   </>
 }
 

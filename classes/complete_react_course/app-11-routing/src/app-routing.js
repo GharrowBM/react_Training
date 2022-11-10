@@ -12,12 +12,15 @@ import MasterEdit from './views/masters/MasterEdit';
 import MasterDelete from './views/masters/MasterDelete';
 import DogAdd from './views/dogs/DogAdd';
 import MasterAdd from './views/masters/MasterAdd';
+import WelcomeView from './views/WelcomeViex';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     children: [
+
+      {path: '/', element: <WelcomeView/> },
 
       // Dogs 
       { path: '/dogs', element: <DogHome/> },

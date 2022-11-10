@@ -2,7 +2,7 @@ import DogForm from "../../components/DogForm"
 
 function DogAdd() {
   return <>
-  <DogForm mode='add'/>
+  <DogForm/>
   </>
 }
 

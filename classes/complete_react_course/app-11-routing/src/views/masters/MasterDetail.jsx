@@ -8,7 +8,7 @@ function MasterDetail() {
   const masterSelected = masters.find(d => d.id === masterId)
 
   return <>
-  <MasterForm master={masterSelected} mode='details' />
+  <MasterForm master={masterSelected}/>
   </>
 }
 

@@ -12,9 +12,9 @@ function Dog (props) {
     <span>{props.dog.age}</span>
     </div>
     <div className={classes.actions}>
-      <Link to={'/dogs/details/' + props.dog.id}>Details</Link>
-      <Link to={'/dogs/edit/' + props.dog.id}>Edit</Link>
-      <Link to={'/dogs/delete/' + props.dog.id}>Delete</Link>
+      <Link to={'/dogs/details/' + props.dog.id + '?mode=details'}>Details</Link>
+      <Link to={'/dogs/edit/' + props.dog.id + '?mode=edit'}>Edit</Link>
+      <Link to={'/dogs/delete/' + props.dog.id + '?mode=delete'}>Delete</Link>
     </div>
   </li>
 }

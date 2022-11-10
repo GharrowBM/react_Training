@@ -13,9 +13,9 @@ function Master(props) {
         <span>{props.master.phone}</span>
       </div>
       <div className={classes.actions}>
-        <Link to={"/masters/details/" + props.master.id}>Details</Link>
-        <Link to={"/masters/edit/" + props.master.id}>Edit</Link>
-        <Link to={"/masters/delete/" + props.master.id}>Delete</Link>
+        <Link to={"/masters/details/" + props.master.id + '?mode=details'}>Details</Link>
+        <Link to={"/masters/edit/" + props.master.id + '?mode=edit'}>Edit</Link>
+        <Link to={"/masters/delete/" + props.master.id + '?mode=delete'}>Delete</Link>
       </div>
     </li>
   );

@@ -30,7 +30,8 @@ const dogSlice = createSlice({
       return {
         ...state,
         isLoading: false,
-        error: action.payload.message
+        error: action.payload,
+        dogs: []
       };
     },
   },
@@ -42,20 +43,24 @@ export const loadDogsData = () => {
 
     try {
       const response = await axios.get(BASE_FIREBASE_URL + `dogs.json`);
-
-      if (response.status === 200 && response.data) {
-        let dogsArray = [];
-
-        for (const key in response.data) {
-          dogsArray.push({ id: key, ...response.data[key] });
+      
+      if (response.status === 200) {
+        if (response.data) {
+          let dogsArray = [];
+          
+          for (const key in response.data) {
+            dogsArray.push({ id: key, ...response.data[key] });
+          }
+          
+          dispatch(dogSlice.actions.loadDogsSuccess(dogsArray));
+        } else {
+          throw new Error('No dog in the database...')
         }
-
-        dispatch(dogSlice.actions.loadDogsSuccess(dogsArray));
       } else {
         throw new Error("Something went wrong...");
       }
     } catch (error) {
-      dispatch(dogSlice.actions.loadDogsFailure({...error}));
+      dispatch(dogSlice.actions.loadDogsFailure(error.message));
     }
   };
 };

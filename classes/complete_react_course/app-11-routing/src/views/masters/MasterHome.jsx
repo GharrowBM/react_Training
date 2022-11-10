@@ -8,6 +8,7 @@ import Master from '../../components/Master'
 function MasterHome () {
   const dispatch = useDispatch()
   const masters = useSelector(state => state.masterState.masters)
+  const error = useSelector(state => state.masterState.error)
 
   useEffect(() => {
     const identifier = setTimeout(() => {
@@ -24,6 +25,7 @@ function MasterHome () {
     <h1>Masters List</h1>
   <Link to={'/masters/add'}>Add</Link>
     </div>
+      {error ? <div className={classes.error}>{error}</div> : null}
   <ul>
     {masters.map(m => <Master master={m} key={m.id}/>)}
   </ul>

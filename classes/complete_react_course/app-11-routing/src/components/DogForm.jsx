@@ -1,5 +1,5 @@
 import classes from './DogForm.module.scss'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -8,6 +8,8 @@ const BASE_FIREBASE_URL = 'https://fir-react-kennel-redux-default-rtdb.europe-we
 
 function DogForm(props) {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const mode = searchParams.get('mode') ?? 'add'
 
   const [dogName, setDogName] = useState({value: props.dog?.name ?? '', isValid: !!props.dog, isTouched: !!props.dog})
   const [dogBreed, setDogBreed] = useState({value: props.dog?.breed ?? '', isValid: !!props.dog, isTouched: !!props.dog})
@@ -18,7 +20,7 @@ function DogForm(props) {
   const submitFormHandler = async (e) => {
     e.preventDefault()
     
-    switch (props.mode) {
+    switch (mode) {
       case 'add':
         await axios.post(BASE_FIREBASE_URL + 'dogs.json', {name: dogName.value, breed: dogBreed.value, age: dogAge.value, pictureURL: dogPictureURL.value})
         break;
@@ -81,8 +83,8 @@ function DogForm(props) {
     checkFormValidity()
   }, [dogName, dogAge, dogBreed, dogPictureURL])
 
-  const isReadOnly = props.mode === 'delete' || props.mode === 'details'
-  const buttonText = props.mode === 'edit' ? 'Edit' : props.mode === 'add' ? 'Add' : props.mode === 'delete' ? 'Delete' : 'Back'
+  const isReadOnly = mode === 'delete' || mode === 'details'
+  const buttonText = mode === 'edit' ? 'Edit' : mode === 'add' ? 'Add' : mode === 'delete' ? 'Delete' : 'Back'
 
   return <form onSubmit={submitFormHandler} className={classes.form}>
     <h3>{props.formTitle}</h3>

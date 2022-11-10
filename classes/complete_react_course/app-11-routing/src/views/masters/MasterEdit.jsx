@@ -8,7 +8,7 @@ function MasterEdit() {
   const masterSelected = masters.find(d => d.id === masterId)
 
 return <>
-<MasterForm master={masterSelected} mode='edit'/>
+<MasterForm master={masterSelected}/>
 </>
 }
 
